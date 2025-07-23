@@ -23,6 +23,7 @@ export default function Index() {
                             </View>
                           </Fragment>
                       )}
+
                     </Pressable>
                   </View>
               )
