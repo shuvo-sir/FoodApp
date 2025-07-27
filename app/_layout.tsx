@@ -16,5 +16,11 @@ export default function RootLayout() {
     if (error) throw error;
     if (fontsLoaded) SplashScreen.hideAsync();
   }, [fontsLoaded, error]);
-  return <Stack />;
+  return (
+      <Stack
+          screenOptions={{
+            headerShown: false, // Hide header globally
+          }}
+      />
+  );
 }

@@ -18,7 +18,6 @@ const CartButton = () => {
                     <Text className={"small-bold text-white"}>{totalItems}</Text>
                 </View>
             )}
-            <Text>CartButton</Text>
         </TouchableOpacity>
     )
 }
