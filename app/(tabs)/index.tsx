@@ -1,9 +1,10 @@
 import { FlatList, Pressable, Text, Image, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images, offers } from "@/constants";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import cn from "clsx";
 import CartButton from "@/components/CartButton";
+import {Link} from "expo-router";
 
 export default function Index() {
     return (
@@ -44,6 +45,11 @@ export default function Index() {
                                     </Fragment>
                                 )}
                             </Pressable>
+
+                            <View className={"flex-row gap-2 justify-center"}>
+                                <Text className={"base-bold text-gray-100"}>Already have an account?</Text>
+                                <Link href="/sign-up" className={"base-bold text-primary"}>Sign Up</Link>
+                            </View>
                         </View>
                     );
                 }}
