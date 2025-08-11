@@ -3,8 +3,7 @@ import React from 'react'
 import {SafeAreaView} from "react-native-safe-area-context";
 import {Slot} from "expo-router";
 import {images} from "@/constants";
-import CustomInput from "@/components/CustomInput";
-import CustomButtom from "@/components/CustomButtom";
+
 
 export default function _Layout() {
     return (
@@ -21,10 +20,8 @@ export default function _Layout() {
                         className={"self-center size-48 absolute -bottom-16 z-10"}
                     />
                 </View>
-
                 <Slot/>
             </ScrollView>
-
         </KeyboardAvoidingView>
     )
 }

@@ -4,6 +4,7 @@ import {useFonts} from "expo-font";
 import {useEffect} from "react";
 import * as Sentry from '@sentry/react-native';
 
+
 Sentry.init({
   dsn: 'https://7e3a0bf06d5f771604c7f259ab78a202@o4509826596601856.ingest.us.sentry.io/4509826598174720',
 
