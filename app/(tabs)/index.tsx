@@ -47,10 +47,6 @@ export default function Index() {
                                 )}
                             </Pressable>
 
-                            <View className={"flex-row gap-2 justify-center"}>
-                                <Text className={"base-bold text-gray-100"}>Already have an account?</Text>
-                                <Link href="/sign-up" className={"base-bold text-primary"}>Sign Up</Link>
-                            </View>
                         </View>
                     );
                 }}

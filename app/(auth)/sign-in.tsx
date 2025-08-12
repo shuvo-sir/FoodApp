@@ -1,6 +1,6 @@
 import {View, Text, Button, Alert} from 'react-native'
 import React, {useState} from 'react'
-import {Link, router, Slot} from "expo-router";
+import {Link, router} from "expo-router";
 import CustomInput from "@/components/CustomInput";
 import CustomButtom from "@/components/CustomButtom";
 import {signIn} from "@/lib/appwrite";
@@ -11,10 +11,7 @@ const SignIn = () => {
 
     const submit = async () => {
         const {email, password} = form;
-        if (!email || !password) {
-            Alert.alert("Please enter your valid email and password");
-            return; // stop execution here
-        }
+        if (!email || !password) return  Alert.alert("Please enter your valid email and password");
 
         setIsSubmitting(true);
         try {
@@ -32,7 +29,7 @@ const SignIn = () => {
             <CustomInput
                 placeholder= "Enter your email address"
                 value={form.email}
-                onChangeText={(text) => setForm(prev => ({...prev, email: text}))}
+                onChangeText={(text) => setForm((prev) =>({ ...prev, email: text }))}
                 label={"Email"}
                 keyboardType="email-address"
             />
@@ -40,7 +37,7 @@ const SignIn = () => {
             <CustomInput
                 placeholder= "Enter your password"
                 value={form.password}
-                onChangeText={(text) => setForm(prev => ({...prev, password: text}))}
+                onChangeText={(text) => setForm((prev) =>({ ...prev, password: text }))}
                 label={"Password"}
                 secureTextEntry={true}
             />
@@ -50,8 +47,8 @@ const SignIn = () => {
                 isLoading={isSubmitting}
                 onPress={submit}
             />
-            <View className={"flex-row gap-2 justify-center"}>
-                <Text className={"base-bold text-gray-100"}>Don't have an account</Text>
+            <View className={"flex justify-center mt-5 flex-row gap-2"}>
+                <Text className={"base-regular text-gray-100"}>Don't have an account</Text>
                 <Link href="/sign-up" className={"base-bold text-primary"}>Sign Up</Link>
             </View>
         </View>

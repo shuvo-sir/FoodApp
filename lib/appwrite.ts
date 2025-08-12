@@ -7,9 +7,11 @@ export const appwriteConfig = {
     platform: "com.shuvo.foodApp",
     databaseId: "6887534300225c2265ef",
     userCollectionId: "6887539c000b4bea2e42",
-};
+}
 
-export const client = new Client()
+export const client = new Client();
+
+    client
     .setEndpoint(appwriteConfig.endpoint)
     .setProject(appwriteConfig.projectId)
     .setPlatform(appwriteConfig.platform);
@@ -32,7 +34,7 @@ export  const createUser = async ({email, password, name}: CreateUserParams ) =>
             appwriteConfig.databaseId,
             appwriteConfig.userCollectionId,
             ID.unique(),
-            {email, password, accountId: newAccount.$id, avatar: avatarUrl},
+            {email, name, accountId: newAccount.$id, avatar: avatarUrl}
         );
     }catch(e) {
         throw new Error(e as string);
@@ -42,7 +44,7 @@ export  const createUser = async ({email, password, name}: CreateUserParams ) =>
 export const  signIn = async ({email, password} : SignInParams) => {
     try {
         const session = await account.createEmailPasswordSession(email, password);
-    }catch(e) {
+    } catch(e) {
         throw new Error(e as string);
     }
 }
