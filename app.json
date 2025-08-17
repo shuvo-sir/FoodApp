@@ -33,14 +33,6 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ],
-      [
-        "@sentry/react-native/expo",
-        {
-          "url": "https://sentry.io/",
-          "project": "shuvo_food_ordering",
-          "organization": "shuvodev"
-        }
       ]
     ],
     "experiments": {

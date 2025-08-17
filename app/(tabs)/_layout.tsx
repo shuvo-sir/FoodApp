@@ -1,9 +1,9 @@
-import {Redirect, Slot, Stack} from "expo-router";
+import {Redirect, Slot} from "expo-router";
 
-export default function Layout() {
-    const isAuthenticated = true
+export default function _Layout() {
+    const isAuthenticated = false;
 
     if (!isAuthenticated) return <Redirect href="/sign-in" />;
 
-    return <Stack/>
+    return <Slot/>
 }
