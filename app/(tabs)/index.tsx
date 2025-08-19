@@ -4,6 +4,7 @@ import { images, offers } from "@/constants";
 import React, { Fragment } from "react";
 import cn from "clsx";
 import CartButton from "@/components/CartButton";
+import * as Sentry from "@sentry/react-native";
 
 export default function Index() {
     return (
@@ -65,9 +66,13 @@ export default function Index() {
                     </View>
                 )}
 
-                ListEmptyComponent={() => (
-                    <Text className="text-center text-gray-400 mt-10">No offers available.</Text>
+                ListFooterComponent = {() => (
+                    <Button title='Try!' onPress={ () => { Sentry.captureException(new Error('First error')) }}/>
                 )}
+
+                // ListEmptyComponent={() => (
+                //     <Text className="text-center text-gray-400 mt-10">No offers available.</Text>
+                // )}
             />
         </SafeAreaView>
     );
