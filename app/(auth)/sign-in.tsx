@@ -4,7 +4,7 @@ import {Link, router} from "expo-router";
 import CustomInput from "@/components/CustomInput";
 import CustomButtom from "@/components/CustomButtom";
 import {signIn} from "@/lib/appwrite";
-
+import * as Sentry from "@sentry/react-native";
 
 
 const SignIn = () => {
@@ -21,6 +21,7 @@ const SignIn = () => {
             router.replace("/");
         } catch (error: any) {
             Alert.alert("Error", error.message);
+            Sentry.captureEvent(error);
         } finally {
             setIsSubmitting(false);
         }
