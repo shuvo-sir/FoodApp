@@ -7,6 +7,10 @@ export const appwriteConfig = {
     platform: "com.shuvo.foodApp",
     databaseId: "6887534300225c2265ef",
     userCollectionId: "6887539c000b4bea2e42",
+    categoriesCollectionId: "68a5d3cc000dcadc162b",
+    menuCollectionId: "68a5d559001e2afe22f5",
+    customizationsCollectionId: "68a5d81300149bc99be0",
+    menuCustomizationsCollectionId: "68a7444e00124a794723"
 }
 
 export const client = new Client();
