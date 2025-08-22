@@ -1,4 +1,4 @@
-import {Account, Avatars, Client, Databases, ID, Query} from "react-native-appwrite";
+import {Account, Avatars, Client, Databases, ID,Storage, Query} from "react-native-appwrite";
 import {CreateUserParams, GetMenuParams, SignInParams} from "@/type";
 
 export const appwriteConfig = {
@@ -6,6 +6,7 @@ export const appwriteConfig = {
     projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
     platform: "com.shuvo.foodApp",
     databaseId: "6887534300225c2265ef",
+    bucketId: "68a746e90009a2d51666",
     userCollectionId: "6887539c000b4bea2e42",
     categoriesCollectionId: "68a5d3cc000dcadc162b",
     menuCollectionId: "68a5d559001e2afe22f5",
@@ -22,6 +23,7 @@ export const client = new Client();
 
 export const account = new Account(client);
 export const databases = new Databases(client);
+export const storage = new Storage(client);
 export const avatars = new Avatars(client);
 
 
