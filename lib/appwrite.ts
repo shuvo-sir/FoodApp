@@ -7,11 +7,11 @@ export const appwriteConfig = {
     platform: "com.shuvo.foodApp",
     databaseId: "6887534300225c2265ef",
     bucketId: "68a746e90009a2d51666",
-    userCollectionId: "6887539c000b4bea2e42",
-    categoriesCollectionId: "68a5d3cc000dcadc162b",
-    menuCollectionId: "68a5d559001e2afe22f5",
-    customizationsCollectionId: "68a5d81300149bc99be0",
-    menuCustomizationsCollectionId: "68a7444e00124a794723"
+    userCollectionId: "68a9705d0024dad58912",
+    categoriesCollectionId: "68a972740033e69862d2",
+    menuCollectionId: "68a9734a0013dab26e59",
+    customizationsCollectionId: "68a974c40014bd3f3f55",
+    menuCustomizationsCollectionId: "68a975bf000d6de67b50"
 }
 
 export const client = new Client();
@@ -50,6 +50,7 @@ export  const createUser = async ({email, password, name}: CreateUserParams ) =>
 export const  signIn = async ({email, password} : SignInParams) => {
     try {
         const session = await account.createEmailPasswordSession(email, password);
+        return session;
     } catch(e) {
         throw new Error(e as string);
     }

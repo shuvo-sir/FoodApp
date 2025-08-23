@@ -4,12 +4,16 @@ import {Link, router} from "expo-router";
 import CustomInput from "@/components/CustomInput";
 import CustomButtom from "@/components/CustomButtom";
 import {createUser} from "@/lib/appwrite";
+import * as Sentry from "@sentry/react-native";
 
 const SignUp = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [form, setForm] = useState({name: "", email: "", password: ""});
 
     const submit = async () => {
+        // Prevent double submission
+        if (isSubmitting) return;
+
         const {name, email, password} = form;
         if (!name || !email || !password) return  Alert.alert("Please enter your valid email and password");
 
@@ -19,6 +23,7 @@ const SignUp = () => {
             router.replace("/(auth)/sign-in");
         } catch (error: any) {
             Alert.alert("Error", error.message);
+            Sentry.captureEvent(error);
         } finally {
             setIsSubmitting(false);
         }
