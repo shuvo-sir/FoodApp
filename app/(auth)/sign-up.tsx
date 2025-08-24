@@ -11,8 +11,6 @@ const SignUp = () => {
     const [form, setForm] = useState({name: "", email: "", password: ""});
 
     const submit = async () => {
-        // Prevent double submission
-        if (isSubmitting) return;
 
         const {name, email, password} = form;
         if (!name || !email || !password) return  Alert.alert("Please enter your valid email and password");
