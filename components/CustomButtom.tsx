@@ -11,6 +11,7 @@ const CustomButtom = ({
     leftIcon,
     isLoading = false,
 } : CustomButtonProps) => {
+// return
     return (
         <TouchableOpacity className={cn("custom-btn", style)} onPress={onPress}>
             {leftIcon}
